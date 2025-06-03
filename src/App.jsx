@@ -6,6 +6,8 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import LPGOrderForm from './pages/LPGOrderForm';
+import SolarConsultForm from './pages/SolarConsultForm';
 
 function App() {
   const router = createBrowserRouter([
@@ -28,7 +30,14 @@ function App() {
         {
           path: 'contact',
           element: <Contact />
-        }
+        },
+        {path: 'order-lpg',
+          element: <LPGOrderForm />
+        },
+        {
+          path: 'book-solar',
+          element: <SolarConsultForm />
+        },
       ]
     }
   ]);

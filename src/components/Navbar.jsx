@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-50">
+    <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo and Brand */}
@@ -28,21 +28,18 @@ const Navbar = () => {
               <Link
                 key={link.title}
                 to={link.path}
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
               >
                 {link.title}
               </Link>
             ))}
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300">
-              Get Started
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-blue-600 focus:outline-none"
+              className="text-gray-700 hover:text-blue-600 focus:outline-none"
             >
               {isOpen ? (
                 <FaTimes className="h-6 w-6" />
@@ -56,23 +53,17 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/80 backdrop-blur-md">
               {navLinks.map((link) => (
                 <Link
                   key={link.title}
                   to={link.path}
-                  className="block px-3 py-2 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                  className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-300"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.title}
                 </Link>
               ))}
-              <button 
-                className="w-full mt-4 bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Get Started
-              </button>
             </div>
           </div>
         )}
