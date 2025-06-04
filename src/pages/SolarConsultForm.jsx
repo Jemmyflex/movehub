@@ -62,7 +62,7 @@ const SolarConsultForm = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name"
-                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-white placeholder-gray-300"
+                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-black placeholder-gray-300"
               />
             </div>
 
@@ -75,7 +75,7 @@ const SolarConsultForm = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="+233..."
-                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-white placeholder-gray-300"
+                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-black placeholder-gray-300"
               />
             </div>
 
@@ -88,7 +88,7 @@ const SolarConsultForm = () => {
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 placeholder="e.g. Tema, Kumasi"
-                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-white placeholder-gray-300"
+                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-black placeholder-gray-300"
               />
             </div>
 
@@ -99,7 +99,7 @@ const SolarConsultForm = () => {
               <select
                 value={systemSize}
                 onChange={(e) => setSystemSize(e.target.value)}
-                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-white placeholder-gray-300"
+                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-black placeholder-gray-300"
               >
                 <option value="">Select size</option>
                 <option>Small (Home use)</option>

@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaSolarPanel, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  // Handle navbar background on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { title: 'Home', path: '/' },
@@ -13,13 +24,22 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <nav className={`fixed w-full z-[1000] transition-opacity duration-300 ${
+      scrolled 
+        ? 'bg-[#035F6A] shadow-lg opacity-100' 
+        : 'bg-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           {/* Logo and Brand */}
-          <Link to="/" className="flex items-center">
-            <FaSolarPanel className="h-8 w-8 text-blue-600" />
-            <span className="ml-2 text-xl font-bold text-gray-800">MoveHub</span>
+          <Link 
+            to="/" 
+            className="flex items-center space-x-3 group"
+          >
+            <FaSolarPanel className="h-8 w-8 text-white transition-transform duration-300 group-hover:rotate-180" />
+            <span className="text-xl font-bold text-white transition-colors duration-300">
+              MoveHub
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -28,7 +48,12 @@ const Navbar = () => {
               <Link
                 key={link.title}
                 to={link.path}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
+                className={`relative px-3 py-2 text-sm font-medium transition-all duration-300
+                  text-white/90 hover:text-white
+                  ${location.pathname === link.path 
+                    ? 'after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white' 
+                    : 'hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:w-full hover:after:h-0.5 hover:after:bg-white/50'
+                  }`}
               >
                 {link.title}
               </Link>
@@ -39,7 +64,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none"
+              className="p-2 rounded-lg transition-colors duration-300 text-white hover:bg-white/10"
             >
               {isOpen ? (
                 <FaTimes className="h-6 w-6" />
@@ -51,22 +76,26 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/80 backdrop-blur-md">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  to={link.path}
-                  className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.title}
-                </Link>
-              ))}
-            </div>
+        <div className={`md:hidden transition-all duration-300 ${
+          isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}>
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-[#035F6A] rounded-lg shadow-lg mt-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.title}
+                to={link.path}
+                className={`block px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300
+                  ${location.pathname === link.path
+                    ? 'bg-white/10 text-white'
+                    : 'text-white/90 hover:bg-white/5 hover:text-white'
+                  }`}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.title}
+              </Link>
+            ))}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';  // Add this import
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LPGONLY from '../assets/images/LPGONLY.jpg';
@@ -37,14 +38,12 @@ const LPGOrderForm = () => {
   };
 
   return (
-    <div
-      className="min-h-screen py-8 px-4 bg-cover bg-center bg-fixed bg-no-repeat"
+    <div className="min-h-screen py-8 px-4 bg-cover bg-center bg-fixed bg-no-repeat"
       style={{
         backgroundImage: imageLoaded
           ? `linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${LPGONLY})`
           : 'linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))'
-      }}
-    >
+      }}>
       <ToastContainer position="top-center" />
       <div className="max-w-md mx-auto bg-black/20 backdrop-blur-sm rounded-lg shadow-lg">
         <div className="p-5">
@@ -62,7 +61,7 @@ const LPGOrderForm = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name"
-                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-white placeholder-gray-300"
+                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-black placeholder-gray-300"
               />
             </div>
 
@@ -75,7 +74,7 @@ const LPGOrderForm = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="+233..."
-                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-white placeholder-gray-300"
+                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-black placeholder-gray-300"
               />
             </div>
 
@@ -88,7 +87,7 @@ const LPGOrderForm = () => {
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="e.g., Osu, Accra - House No. 22"
                 rows="3"
-                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-white placeholder-gray-300"
+                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-black placeholder-gray-300"
               />
             </div>
 
@@ -99,7 +98,7 @@ const LPGOrderForm = () => {
               <select
                 value={size}
                 onChange={(e) => setSize(e.target.value)}
-                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-white placeholder-gray-300"
+                className="w-full border border-gray-300/50 p-2.5 rounded-md text-sm bg-white/40 text-black placeholder-gray-300"
               >
                 <option value="">Select size</option>
                 <option>3kg</option>
@@ -110,7 +109,13 @@ const LPGOrderForm = () => {
               </select>
             </div>
 
-            <div className="text-center pt-2">
+            <div className="flex justify-center gap-4 pt-2">
+              <Link
+                to="/"
+                className="bg-green-600/80 hover:bg-green-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 flex items-center gap-2"
+              >
+                ← Back to Home
+              </Link>
               <button
                 type="button"
                 onClick={handleOrder}

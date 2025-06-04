@@ -109,100 +109,216 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-16 text-center">Why Choose MoveHub?</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <MdLocalShipping className="text-4xl" />,
-                title: "Fast Delivery",
-                description: "Same-day LPG delivery within Accra"
-              },
-              {
-                icon: <FaShieldAlt className="text-4xl" />,
-                title: "Safety First",
-                description: "Licensed technicians & quality equipment"
-              },
-              {
-                icon: <MdSupportAgent className="text-4xl" />,
-                title: "24/7 Support",
-                description: "Always here when you need us"
-              },
-              {
-                icon: <BiLeaf className="text-4xl" />,
-                title: "Eco-Friendly",
-                description: "Reducing carbon footprint"
-              }
-            ].map((feature, index) => (
-              <div 
-                key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-              >
-                <div className="text-blue-600 mb-6">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      {/* Services */}
-<section className="py-24 px-6">
+      {/* Enhanced Features Section */}
+<section className="py-24 px-6 bg-gradient-to-br from-gray-50 to-white">
   <div className="max-w-7xl mx-auto">
-    <h2 className="text-4xl font-bold mb-12 text-center">Our Services</h2>
+    <div className="text-center mb-20">
+      <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+        Experience the MoveHub Difference
+      </h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Discover why thousands of Ghanaians trust us for their energy needs
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-4 gap-8">
+      {[
+        {
+          icon: <MdLocalShipping className="text-5xl" />,
+          title: "Swift & Reliable",
+          description: "Experience same-day LPG delivery within Accra. Your time matters to us.",
+          color: "text-green-600"
+        },
+        {
+          icon: <FaShieldAlt className="text-5xl" />,
+          title: "Safety First",
+          description: "Certified technicians and premium equipment for your peace of mind.",
+          color: "text-blue-600"
+        },
+        {
+          icon: <MdSupportAgent className="text-5xl" />,
+          title: "24/7 Support",
+          description: "Our dedicated team is always ready to assist you anytime.",
+          color: "text-yellow-600"
+        },
+        {
+          icon: <BiLeaf className="text-5xl" />,
+          title: "Eco-Friendly",
+          description: "Join us in building a sustainable future for Ghana.",
+          color: "text-green-600"
+        }
+      ].map((feature, index) => (
+        <div 
+          key={index}
+          className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:bg-gradient-to-br from-white to-gray-50 group"
+        >
+          <div className={`${feature.color} mb-6 transform group-hover:scale-110 transition-transform duration-500`}>
+            {feature.icon}
+          </div>
+          <h3 className="text-2xl font-semibold mb-4 group-hover:text-green-600 transition-colors duration-300">
+            {feature.title}
+          </h3>
+          <p className="text-gray-600 leading-relaxed group-hover:text-gray-700">
+            {feature.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+      {/* Services Section */}
+<section className="py-24 px-6 bg-gradient-to-br from-white to-gray-50">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+        Our Energy Solutions
+      </h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        Powering homes and businesses across Ghana with reliable energy solutions
+      </p>
+    </div>
+
     <div className="grid md:grid-cols-2 gap-12">
-      <div className="bg-gradient-to-br from-green-50 to-green-100 p-10 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <FaGasPump className="text-5xl text-green-600 mb-6" />
-        <h3 className="text-2xl font-semibold mb-4">LPG Door Delivery</h3>
-        <p className="text-gray-700 leading-relaxed mb-6">
-          Get filled gas cylinders delivered right to your home or business. 
-          Available in sizes from 3kg to 50kg.
+      <div className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100/50">
+        <div className="flex items-center justify-between mb-8">
+          <FaGasPump className="text-6xl text-green-600 transform group-hover:scale-110 transition-transform duration-500" />
+          <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+            Same Day Delivery
+          </span>
+        </div>
+        <h3 className="text-3xl font-bold mb-4 text-gray-800">LPG Door Delivery</h3>
+        <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+          Get your LPG cylinders delivered right to your doorstep. We offer:
         </p>
-        <button className="text-green-600 font-semibold flex items-center gap-2 group">
-          Learn More 
-          <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-        </button>
+        <ul className="space-y-3 mb-8 text-gray-600">
+          <li className="flex items-center gap-3">
+            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+            Multiple cylinder sizes (3kg to 50kg)
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+            Same-day delivery within Accra
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+            Safe handling by certified technicians
+          </li>
+        </ul>
+        <Link
+          to="/order-lpg"
+          className="inline-flex items-center gap-2 text-green-600 font-semibold group-hover:text-green-700 transition-colors duration-300"
+        >
+          Order Now
+          <span className="transform group-hover:translate-x-2 transition-transform duration-300">→</span>
+        </Link>
       </div>
-      <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 p-10 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <FaSolarPanel className="text-5xl text-yellow-600 mb-6" />
-        <h3 className="text-2xl font-semibold mb-4">Solar Installation</h3>
-        <p className="text-gray-700 leading-relaxed mb-6">
-          High-efficiency solar systems for homes & businesses with smart 
-          monitoring and professional installation.
+
+      <div className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100/50">
+        <div className="flex items-center justify-between mb-8">
+          <FaSolarPanel className="text-6xl text-blue-600 transform group-hover:scale-110 transition-transform duration-500" />
+          <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+            Professional Installation
+          </span>
+        </div>
+        <h3 className="text-3xl font-bold mb-4 text-gray-800">Solar Solutions</h3>
+        <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+          Transform your energy consumption with our solar installations. Features include:
         </p>
-        <button className="text-yellow-600 font-semibold flex items-center gap-2 group">
-          Learn More 
-          <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-        </button>
+        <ul className="space-y-3 mb-8 text-gray-600">
+          <li className="flex items-center gap-3">
+            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            High-efficiency solar panels
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            Smart monitoring systems
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            Expert installation & maintenance
+          </li>
+        </ul>
+        <Link
+          to="/book-solar"
+          className="inline-flex items-center gap-2 text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-300"
+        >
+          Book Consultation
+          <span className="transform group-hover:translate-x-2 transition-transform duration-300">→</span>
+        </Link>
       </div>
     </div>
   </div>
-</section> {/* ✅ This was missing */}
+</section>
 
       {/* Contact Section */}
-      <section className="py-24 px-6 bg-gradient-to-br from-green-500 to-green-600 text-white text-center">
-        <div className="max-w-3xl mx-auto">
-          <h3 className="text-3xl font-bold mb-6">Ready to switch to clean energy?</h3>
-          <p className="text-xl mb-10 opacity-90">Join Ghana's energy revolution today.</p>
-          <div className="flex justify-center gap-6 flex-wrap">
-            <a
-              href="tel:+233559718196"
-              className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold flex items-center gap-3 hover:bg-gray-100 transform hover:scale-105 transition duration-300"
-            >
-              <FaPhoneAlt /> Call Us Now
-            </a>
-            <a
-              href="https://wa.me/233559718196"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-8 py-4 rounded-full font-semibold flex items-center gap-3 hover:bg-[#1ea952] transform hover:scale-105 transition duration-300"
-            >
-              <FaWhatsapp className="text-xl" /> Chat on WhatsApp
-            </a>
+      <section className="py-24 px-6 bg-gradient-to-br from-[#035F6A] to-green-600 text-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold mb-6">
+              Ready to Switch to Clean Energy?
+            </h2>
+            <p className="text-xl mb-12 opacity-90 max-w-2xl mx-auto">
+              Join thousands of satisfied customers who are already part of Ghana's energy revolution. Contact us now and experience the difference.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl hover:bg-white/20 transition-all duration-300 group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-white/20 p-4 rounded-full">
+                  <FaPhoneAlt className="text-3xl text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">Call Us</h3>
+                  <p className="text-white/80">Available 24/7</p>
+                </div>
+              </div>
+              <a
+                href="tel:+233559718196"
+                className="w-full bg-white text-[#035F6A] px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-3 hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 group-hover:shadow-lg"
+              >
+                <FaPhoneAlt className="text-lg" />
+                +233 559 718 196
+              </a>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl hover:bg-white/20 transition-all duration-300 group">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-white/20 p-4 rounded-full">
+                  <FaWhatsapp className="text-3xl text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">WhatsApp</h3>
+                  <p className="text-white/80">Instant Response</p>
+                </div>
+              </div>
+              <a
+                href="https://wa.me/233559718196"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#25D366] text-white px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-3 hover:bg-[#1ea952] transform hover:scale-105 transition-all duration-300 group-hover:shadow-lg"
+              >
+                <FaWhatsapp className="text-xl" />
+                Chat with Us
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <p className="text-lg text-white/90 mb-4">
+              Experience the future of energy solutions today
+            </p>
+            <div className="flex justify-center gap-2 items-center text-white/80">
+              <MdTimer className="text-xl" />
+              <span>Quick Response Time</span>
+              <span className="mx-2">•</span>
+              <FaShieldAlt className="text-xl" />
+              <span>Secure Service</span>
+              <span className="mx-2">•</span>
+              <MdSupportAgent className="text-xl" />
+              <span>24/7 Support</span>
+            </div>
           </div>
         </div>
       </section>
