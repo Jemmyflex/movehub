@@ -3,40 +3,46 @@ import { Link } from 'react-router-dom';
 import { FaSolarPanel, FaGasPump, FaPhoneAlt, FaWhatsapp, FaLeaf, FaShieldAlt } from 'react-icons/fa';
 import { MdLocalShipping, MdSupportAgent, MdTimer } from 'react-icons/md';
 import { BiLeaf } from 'react-icons/bi';
+import SOLAR1 from '../assets/images/SOLAR1.jpg';
+import SOLAR5 from '../assets/images/SOLAR5.jpg';
+import LPG2 from '../assets/images/LPG2.jpg';
+import LPG3 from '../assets/images/LPG3.webp';
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const backgroundImages = [
-    '/images/LPGW.jpg',
-    '/images/SOLAR1.jpg',
-    '/images/FLAME2.jpg',
-    '/images/SOLAR2.jpg',
-    '/images/LPGONLY.jpg'
+    LPG2,
+    SOLAR1,
+    LPG3,
+    SOLAR5
   ];
 
   // Preload images
   useEffect(() => {
-    const loadImages = () => {
-      const imagePromises = backgroundImages.map((src) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = src;
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      });
+    const loadImages = async () => {
+      try {
+        const loadImage = (src) => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => resolve(src);
+            img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
+          });
+        };
 
-      Promise.all(imagePromises)
-        .then(() => setImagesLoaded(true))
-        .catch((error) => console.error('Error loading images:', error));
+        await Promise.all(backgroundImages.map(src => loadImage(src)));
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error('Error loading images:', error);
+      }
     };
 
     loadImages();
-  }, []);
+  }, [backgroundImages]);
 
-  // Image slider timer
+  // Updated image slider timer with longer duration
   useEffect(() => {
     if (!imagesLoaded) return;
 
@@ -44,7 +50,7 @@ const Home = () => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Change image every 5 seconds
+    }, 8000); // Changed from 5000 to 8000 ms (8 seconds)
 
     return () => clearInterval(timer);
   }, [imagesLoaded, backgroundImages.length]);
@@ -53,51 +59,51 @@ const Home = () => {
     <div className="font-sans text-gray-800">
       {/* Hero Section with Changing Background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          {imagesLoaded ? (
-            backgroundImages.map((img, index) => (
-              <div
-                key={img}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-green-600/80 to-blue-600/80 z-10"></div>
-                <img 
-                  src={img}
-                  alt={`Energy Services ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))
-          ) : (
-            // Loading state
-            <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-blue-600" />
-          )}
-        </div>
+        {/* Background Images */}
+        {imagesLoaded ? (
+          backgroundImages.map((img, index) => (
+            <div
+              key={img}
+              className={`absolute inset-0 transition-opacity duration-2000 ${
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/60"></div>
+              <img 
+                src={img}
+                alt={`Energy Services ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-blue-600" />
+        )}
 
-        {/* Hero Content */}
-        <div className="relative z-20 text-center text-white px-6 max-w-5xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in">
+        {/* Hero Content - Directly on images */}
+        <div className="relative z-20 text-center text-white px-6 max-w-5xl">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight drop-shadow-lg">
             Clean Energy,<br/>Delivered Simply
           </h1>
-          <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-3xl mx-auto">
-            Ghana's premier LPG delivery and solar installation service, bringing sustainable energy solutions to your doorstep.
+          <p className="text-2xl md:text-3xl mb-12 opacity-90 max-w-3xl mx-auto drop-shadow-md">
+            Ghana's premier LPG delivery and solar installation service
           </p>
           <div className="flex justify-center gap-6 flex-wrap">
-            <Link to="/order-lpg">
-              <button className="group bg-white/95 backdrop-blur text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-white transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
-                <FaGasPump className="text-xl" />
-                Order LPG Now
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </button>
+            <Link 
+              to="/order-lpg"
+              className="group bg-white/90 backdrop-blur text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-white transform hover:scale-105 transition-all duration-300 flex items-center gap-3 shadow-lg"
+            >
+              <FaGasPump className="text-xl" />
+              Order LPG Now
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
-            <Link to="/book-solar">
-              <button className="group bg-blue-600/95 backdrop-blur text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 flex items-center gap-3">
-                <FaSolarPanel className="text-xl" />
-                Book Solar Consult
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </button>
+            <Link 
+              to="/book-solar"
+              className="group bg-blue-600/90 backdrop-blur text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 flex items-center gap-3 shadow-lg"
+            >
+              <FaSolarPanel className="text-xl" />
+              Book Solar Consult
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </div>
         </div>
