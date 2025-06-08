@@ -58,7 +58,7 @@ const Home = () => {
   return (
     <div className="font-sans text-gray-800">
       {/* Hero Section with Changing Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#035F6A] pt-20">
         {/* Background Images */}
         {imagesLoaded ? (
           backgroundImages.map((img, index) => (

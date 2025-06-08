@@ -1,20 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaSolarPanel, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import Logo from '../assets/images/Logo2.png'; // Add this import
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  // Handle navbar background on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { title: 'Home', path: '/' },
@@ -24,11 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-[1000] transition-opacity duration-300 ${
-      scrolled 
-        ? 'bg-[#035F6A] shadow-lg opacity-100' 
-        : 'bg-transparent'
-    }`}>
+    <nav className="w-full bg-[#035F6A] shadow-lg z-[1000] fixed top-0 left-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           {/* Logo and Brand */}
@@ -36,9 +23,15 @@ const Navbar = () => {
             to="/" 
             className="flex items-center space-x-3 group"
           >
-            <FaSolarPanel className="h-8 w-8 text-white transition-transform duration-300 group-hover:rotate-180" />
-            <span className="text-xl font-bold text-white transition-colors duration-300">
-              MoveHub
+            <img 
+              src={Logo} 
+              alt="MoveHub Logo" 
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <span className="text-3xl font-bold transition-colors duration-300">
+              <span className="text-green-400">Move</span>
+              <span className="text-white">Hub</span>
+              <span className="text-white"> Limited</span>
             </span>
           </Link>
 
