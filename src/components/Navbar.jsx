@@ -72,12 +72,12 @@ const Navbar = () => {
         <div className={`md:hidden transition-all duration-300 ${
           isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-[#035F6A] rounded-lg shadow-lg mt-2">
+          <div className="px-2 pt-1 pb-2 space-y-0.5 bg-[#035F6A] rounded-lg shadow-lg mt-1">
             {navLinks.map((link) => (
               <Link
                 key={link.title}
                 to={link.path}
-                className={`block px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300
+                className={`block px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300
                   ${location.pathname === link.path
                     ? 'bg-white/10 text-white'
                     : 'text-white/90 hover:bg-white/5 hover:text-white'
