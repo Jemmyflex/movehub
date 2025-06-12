@@ -88,6 +88,7 @@ const Home = () => {
           <p className="text-2xl md:text-3xl mb-12 opacity-90 max-w-3xl mx-auto drop-shadow-md">
             Ghana's premier LPG delivery and solar installation service
           </p>
+          {/* Hero Section buttons */}
           <div className="flex justify-center gap-6 flex-wrap">
             <Link 
               to="/order-lpg"
@@ -225,6 +226,7 @@ const Home = () => {
         <p className="text-gray-600 leading-relaxed mb-8 text-lg">
           Transform your energy consumption with our solar installations. Features include:
         </p>
+        {/* Solar card styles */}
         <ul className="space-y-3 mb-8 text-gray-600">
           <li className="flex items-center gap-3">
             <span className="w-2 h-2 bg-blue-500 rounded-full"></span>

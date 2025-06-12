@@ -73,43 +73,71 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Service Details */}
-      <section className="py-24 px-6 bg-gradient-to-br from-gray-50 to-white">
+      {/* LPG Service Section */}
+      <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#035F6A] to-green-600 bg-clip-text text-transparent">
-              Detailed Service Offerings
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore our comprehensive range of energy solutions designed to meet your specific needs
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* LPG Service */}
-            <div className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100/50">
-              <div className="flex items-center justify-between mb-8">
-                <FaGasPump className="text-6xl text-green-600 transform group-hover:scale-110 transition-transform duration-500" />
-                <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+          <div className="flex items-center justify-between mb-12">
+            <div className="flex items-center gap-6">
+              <FaGasPump className="text-7xl text-green-600" />
+              <div>
+                <h2 className="text-4xl font-bold text-gray-800">LPG Door Delivery</h2>
+                <span className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium mt-2">
                   Same Day Delivery
                 </span>
               </div>
-              <h3 className="text-3xl font-bold mb-4 text-gray-800">LPG Door Delivery</h3>
-              <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <p className="text-gray-600 leading-relaxed text-lg mb-8">
                 Get your LPG cylinders delivered right to your doorstep with our efficient service.
               </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3 text-gray-600">
-                  <FaTruck className="text-green-600 text-xl" />
-                  <span>Same-day delivery within Accra</span>
+              <ul className="space-y-6 mb-8">
+                <li className="flex items-start gap-3 text-gray-600">
+                  <FaTruck className="text-green-600 text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold block mb-1">Doorstep Delivery</span>
+                    <p className="text-sm leading-relaxed">
+                      Unlike traditional LPG stations, MoveHub brings gas directly to customers, eliminating the need to travel or queue.
+                    </p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-3 text-gray-600">
-                  <FaShieldAlt className="text-green-600 text-xl" />
-                  <span>Safe handling by certified technicians</span>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <FaClock className="text-green-600 text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold block mb-1">Time-Saving and Hassle-Free</span>
+                    <p className="text-sm leading-relaxed">
+                      Customers don't have to carry heavy cylinders or take time off to refill—MoveHub handles it all.
+                    </p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-3 text-gray-600">
-                  <FaClock className="text-green-600 text-xl" />
-                  <span>Flexible delivery scheduling</span>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <FaShieldAlt className="text-green-600 text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold block mb-1">Reliable and Fast Service</span>
+                    <p className="text-sm leading-relaxed">
+                      Timely deliveries by trained personnel ensure consistent and dependable access to cooking gas.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <MdSupportAgent className="text-green-600 text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold block mb-1">Customer Education and Support</span>
+                    <p className="text-sm leading-relaxed">
+                      Our team educates customers on safe LPG usage, helping first-time users transition from charcoal or firewood confidently.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <FaCheckCircle className="text-green-600 text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold block mb-1">Exclusivity and Scale</span>
+                    <p className="text-sm leading-relaxed">
+                      MoveHub is the exclusive distributor for Newgas in our operational zones, giving us a dependable supply and a competitive edge in service delivery.
+                    </p>
+                  </div>
                 </li>
               </ul>
               <Link
@@ -120,31 +148,81 @@ const Services = () => {
                 <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
               </Link>
             </div>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src="/src/assets/images/LPG2.jpg" 
+                alt="LPG Delivery Service" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Solar Service */}
-            <div className="group bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100/50">
-              <div className="flex items-center justify-between mb-8">
-                <FaSolarPanel className="text-6xl text-blue-600 transform group-hover:scale-110 transition-transform duration-500" />
-                <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+      {/* Solar Service Section */}
+      <section className="py-24 px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-12">
+            <div className="flex items-center gap-6">
+              <FaSolarPanel className="text-7xl text-blue-600" />
+              <div>
+                <h2 className="text-4xl font-bold text-gray-800">Solar Solutions</h2>
+                <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mt-2">
                   Professional Installation
                 </span>
               </div>
-              <h3 className="text-3xl font-bold mb-4 text-gray-800">Solar Solutions</h3>
-              <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              {/* Add an image of your solar service here */}
+              <img 
+                src="/src/assets/images/SOLAR6.jpg" 
+                alt="Solar Installation Service" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-gray-600 leading-relaxed text-lg mb-8">
                 Transform your energy consumption with our comprehensive solar installations.
               </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3 text-gray-600">
-                  <FaSolarPanel className="text-blue-600 text-xl" />
-                  <span>High-efficiency solar panels</span>
+              <ul className="space-y-6 mb-8">
+                <li className="flex items-start gap-3 text-gray-600">
+                  <FaSolarPanel className="text-blue-600 text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold block mb-1">Premium, Durable Solar Panels</span>
+                    <p className="text-sm leading-relaxed">
+                      We use globally recognized solar panels built to withstand harsh weather and deliver long-term performance—ensuring our customers get maximum value and reliability.
+                    </p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-3 text-gray-600">
-                  <FaTools className="text-blue-600 text-xl" />
-                  <span>Expert installation & maintenance</span>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <FaTools className="text-blue-600 text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold block mb-1">Reliable, Decentralized Power</span>
+                    <p className="text-sm leading-relaxed">
+                      Our systems work for both grid-connected and off-grid locations, reducing dependence on unstable electricity supply and protecting against blackouts.
+                    </p>
+                  </div>
                 </li>
-                <li className="flex items-center gap-3 text-gray-600">
-                  <MdSupportAgent className="text-blue-600 text-xl" />
-                  <span>24/7 technical support</span>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <MdSupportAgent className="text-blue-600 text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold block mb-1">Smart, Tech-Enabled Monitoring</span>
+                    <p className="text-sm leading-relaxed">
+                      Through our intelligent platform, customers can track power production and usage in real time—putting energy control and cost savings at their fingertips.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 text-gray-600">
+                  <FaShieldAlt className="text-blue-600 text-xl mt-1 flex-shrink-0" />
+                  <div>
+                    <span className="font-semibold block mb-1">Skilled, Responsive Team</span>
+                    <p className="text-sm leading-relaxed">
+                      Our trained electricians and technicians offer professional installations and ongoing support, including timely resolution of technical issues or customer concerns.
+                    </p>
+                  </div>
                 </li>
               </ul>
               <Link
