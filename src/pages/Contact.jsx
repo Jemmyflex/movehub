@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaFax } from 'react-icons/fa';
 
 const ContactPage = () => {
   return (
@@ -12,91 +12,78 @@ const ContactPage = () => {
         </p>
       </section>
 
-      {/* Contact Info + Form */}
-      <section className="py-16 px-6 bg-gray-100">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <h2 className="text-2xl font-bold mb-4">Our Contact Details</h2>
-
-            <div className="flex items-start gap-4">
-              <FaMapMarkerAlt className="text-green-600 text-2xl mt-1" />
-              <div>
-                <h4 className="font-semibold">Address</h4>
-                <p>Osu, Accra, Ghana</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <FaPhoneAlt className="text-green-600 text-2xl mt-1" />
-              <div>
-                <h4 className="font-semibold">Phone</h4>
-                <p>+233 559 718 196</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <FaEnvelope className="text-green-600 text-2xl mt-1" />
-              <div>
-                <h4 className="font-semibold">Email</h4>
-                <p>info@movehubenergy.com</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 mt-6">
-              <a
-                href="https://wa.me/233559718196"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center bg-green-600 text-white px-5 py-3 rounded-xl font-semibold hover:bg-green-700"
-              >
-                <FaWhatsapp className="mr-2" /> Chat on WhatsApp
-              </a>
-            </div>
+      {/* Contact Info Cards */}
+      <section className="bg-[#035F6A] py-12 px-6 text-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+          <div className="bg-white text-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <FaMapMarkerAlt className="text-3xl mx-auto mb-2 text-[#035F6A]" />
+            <h4 className="font-bold mb-1">OUR MAIN OFFICE</h4>
+            <p>Osu, Accra, Ghana</p>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-white p-8 rounded-xl shadow-md">
-            <h2 className="text-xl font-bold mb-6">Send Us a Message</h2>
-            <form className="space-y-4">
-              <div>
-                <label className="block font-semibold mb-1">Full Name</label>
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  className="w-full border border-gray-300 p-3 rounded-lg"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block font-semibold mb-1">Email Address</label>
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  className="w-full border border-gray-300 p-3 rounded-lg"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block font-semibold mb-1">Message</label>
-                <textarea
-                  rows="5"
-                  placeholder="Type your message here..."
-                  className="w-full border border-gray-300 p-3 rounded-lg"
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700"
-              >
-                Send Message
-              </button>
-            </form>
+          <div className="bg-white text-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <FaPhoneAlt className="text-3xl mx-auto mb-2 text-[#035F6A]" />
+            <h4 className="font-bold mb-1">PHONE NUMBER</h4>
+            <p>+233 559 718 196</p>
+            <p>+233 888 123 456 (Toll Free)</p>
           </div>
+
+          <div className="bg-white text-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <FaWhatsapp className="text-3xl mx-auto mb-2 text-[#25D366]" />
+            <h4 className="font-bold mb-1">WHATSAPP</h4>
+            <a 
+              href="https://wa.me/233559718196" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[#25D366] hover:underline"
+            >
+              Chat with us
+            </a>
+          </div>
+
+          <div className="bg-white text-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <FaEnvelope className="text-3xl mx-auto mb-2 text-[#035F6A]" />
+            <h4 className="font-bold mb-1">EMAIL</h4>
+            <a 
+              href="mailto:info@movehubenergy.com" 
+              className="text-[#035F6A] hover:underline"
+            >
+              info@movehubenergy.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="bg-[#e6f4f1] py-16 px-6">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-[#035F6A] mb-8">Contact Us</h2>
+          <form className="space-y-4">
+            <input
+              type="text"
+              placeholder="Enter your Name"
+              className="w-full p-3 rounded-md border border-gray-300"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Enter a valid email address"
+              className="w-full p-3 rounded-md border border-gray-300"
+              required
+            />
+            <textarea
+              rows="5"
+              placeholder="Your message..."
+              className="w-full p-3 rounded-md border border-gray-300"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-[#035F6A] text-white px-6 py-3 rounded-md font-semibold hover:bg-green-700 block mx-auto"
+            >
+              SUBMIT
+            </button>
+          </form>
         </div>
       </section>
 
