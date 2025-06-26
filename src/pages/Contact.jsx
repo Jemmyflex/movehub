@@ -5,7 +5,7 @@ const ContactPage = () => {
   return (
     <div className="font-sans text-gray-800">
       {/* Header */}
-      <section className="bg-green-600 text-white text-center py-16 px-6">
+      <section className="bg-[#035F6A] text-white text-center py-16 px-6">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto">
           We’d love to hear from you! Whether you're ready to place an order, book a consultation, or just have questions — reach out.
@@ -79,7 +79,7 @@ const ContactPage = () => {
             />
             <button
               type="submit"
-              className="bg-[#035F6A] text-white px-6 py-3 rounded-md font-semibold hover:bg-green-700 block mx-auto"
+              className="bg-[#F1782D] text-white px-6 py-3 rounded-md font-semibold hover:bg-green-700 block mx-auto"
             >
               SUBMIT
             </button>
@@ -88,7 +88,7 @@ const ContactPage = () => {
       </section>
 
       {/* Footer CTA */}
-      <section className="bg-blue-600 text-white text-center py-10 px-6">
+      <section className="bg-[#035F6A] text-white text-center py-10 px-6">
         <h3 className="text-2xl font-bold mb-3">Ready to make the switch to clean energy?</h3>
         <p className="mb-5">Let’s help you get started with LPG delivery or solar installation today.</p>
         <a

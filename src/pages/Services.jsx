@@ -39,6 +39,20 @@ const Services = () => {
     },
   ];
 
+  const lpgSteps = [
+    { step: '1', title: 'Place Order', description: 'Choose your cylinder size and place your LPG order online or by phone.' },
+    { step: '2', title: 'Order Confirmation', description: 'Receive confirmation and estimated delivery time from our team.' },
+    { step: '3', title: 'Delivery', description: 'Our trained personnel deliver the filled cylinder to your doorstep.' },
+    { step: '4', title: 'Support', description: 'Get safety tips and support for safe LPG usage.' },
+  ];
+
+  const solarSteps = [
+    { step: '1', title: 'Book Consultation', description: 'Schedule a free site assessment with our solar experts.' },
+    { step: '2', title: 'System Design', description: 'We design a custom solar solution for your needs and budget.' },
+    { step: '3', title: 'Installation', description: 'Our certified technicians install your solar system.' },
+    { step: '4', title: 'Monitoring & Support', description: 'Enjoy reliable power and ongoing support with smart monitoring.' },
+  ];
+
   return (
     <div className="font-sans text-gray-800 pt-0">
       {/* Hero Section */}
@@ -150,8 +164,24 @@ const Services = () => {
         </div>
       </section>
 
+      {/* LPG How It Works */}
+      <section className="py-10 px-4 bg-[#e6f4f1]">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-2xl font-bold mb-6 text-[#035F6A] text-center">How LPG Delivery Works</h2>
+    <div className="grid md:grid-cols-4 gap-6">
+      {lpgSteps.map((item, idx) => (
+        <div key={idx} className="bg-white p-6 rounded-xl shadow-md text-center">
+          <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-lg">{item.step}</div>
+          <h3 className="font-semibold mb-2 text-gray-800">{item.title}</h3>
+          <p className="text-xs text-gray-600">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
       {/* Solar Section */}
-      <section className="py-12 px-4" style={{ background: 'linear-gradient(120deg, #d1f2eb 60%, #f7fafc 100%)' }}>
+      <section className="py-12 px-4" style={{ background: 'linear-gradient(120deg, #d1f2eb 60%, #e6f4f1 100%)' }}>
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
             <FaSolarPanel className="text-3xl text-blue-600" />
@@ -238,8 +268,24 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Solar How It Works */}
+      <section className="py-10 px-4 bg-[#d1f2eb]">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-2xl font-bold mb-6 text-[#035F6A] text-center">How Solar Installation Works</h2>
+    <div className="grid md:grid-cols-4 gap-6">
+      {solarSteps.map((item, idx) => (
+        <div key={idx} className="bg-white p-6 rounded-xl shadow-md text-center">
+          <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-lg">{item.step}</div>
+          <h3 className="font-semibold mb-2 text-gray-800">{item.title}</h3>
+          <p className="text-xs text-gray-600">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
       {/* Process Section */}
-      <section className="py-16 px-6 bg-[#e6f4f1]">
+     {/* <section className="py-16 px-6 bg-[#e6f4f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#035F6A] to-green-600 bg-clip-text text-transparent">
@@ -267,8 +313,7 @@ const Services = () => {
             ))}
           </div>
         </div>
-      </section>
-
+      </section> */}
       {/* CTA Section */}
       <section className="py-16 px-6 bg-gradient-to-br from-[#035F6A] to-green-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
