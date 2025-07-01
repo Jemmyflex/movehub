@@ -8,6 +8,8 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import LPGOrderForm from './pages/LPGOrderForm';
 import SolarConsultForm from './pages/SolarConsultForm';
+import SolarPage from './pages/SolarPage';
+import LpgPage from './pages/LpgPage';
 
 function App() {
   const router = createBrowserRouter([
@@ -34,6 +36,14 @@ function App() {
         {path: 'order-lpg',
           element: <LPGOrderForm />
         },
+        {
+          path: 'lpg',
+          element: <LpgPage />      
+          },
+          {
+            path: 'solar',
+            element: <SolarPage />
+          },
         {
           path: 'book-solar',
           element: <SolarConsultForm />

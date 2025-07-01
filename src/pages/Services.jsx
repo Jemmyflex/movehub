@@ -3,60 +3,18 @@ import { Link } from 'react-router-dom';
 import {
   FaGasPump,
   FaSolarPanel,
-  FaShieldAlt,
-  FaClock,
-  FaTruck,
-  FaTools,
   FaCheckCircle,
 } from 'react-icons/fa';
 import {
-  MdSupportAgent,
   MdSecurity,
   MdTimer,
 } from 'react-icons/md';
 
 const Services = () => {
-  const processSteps = [
-    {
-      step: '1',
-      title: 'Choose Service',
-      description: 'Select between LPG delivery or solar installation',
-    },
-    {
-      step: '2',
-      title: 'Book Online',
-      description: 'Schedule your delivery or consultation',
-    },
-    {
-      step: '3',
-      title: 'Confirmation',
-      description: 'Receive instant booking confirmation',
-    },
-    {
-      step: '4',
-      title: 'Service Delivery',
-      description: 'Experience our professional service',
-    },
-  ];
-
-  const lpgSteps = [
-    { step: '1', title: 'Place Order', description: 'Choose your cylinder size and place your LPG order online or by phone.' },
-    { step: '2', title: 'Order Confirmation', description: 'Receive confirmation and estimated delivery time from our team.' },
-    { step: '3', title: 'Delivery', description: 'Our trained personnel deliver the filled cylinder to your doorstep.' },
-    { step: '4', title: 'Support', description: 'Get safety tips and support for safe LPG usage.' },
-  ];
-
-  const solarSteps = [
-    { step: '1', title: 'Book Consultation', description: 'Schedule a free site assessment with our solar experts.' },
-    { step: '2', title: 'System Design', description: 'We design a custom solar solution for your needs and budget.' },
-    { step: '3', title: 'Installation', description: 'Our certified technicians install your solar system.' },
-    { step: '4', title: 'Monitoring & Support', description: 'Enjoy reliable power and ongoing support with smart monitoring.' },
-  ];
-
   return (
     <div className="font-sans text-gray-800 pt-0">
       {/* Hero Section */}
-      <section className="py-16 px-6 bg-gradient-to-br from-[#035F6A] to-green-600 text-white">
+      <section className="py-16 px-6 bg-gradient-to-br from-[#035F6A] to-[#0ea371] text-white">
         <div className="max-w-5xl mx-auto text-center">
           <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-medium mb-6">
             Trusted by 1000+ Customers
@@ -65,7 +23,7 @@ const Services = () => {
             Comprehensive Energy Solutions
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90 mb-12">
-            From LPG delivery to solar installations, we're your one-stop solution for all energy needs
+            From LPG delivery to solar installations, we're your one-stop solution for all energy needs.
           </p>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
@@ -87,235 +45,33 @@ const Services = () => {
         </div>
       </section>
 
-      {/* LPG Section */}
-      <section className="py-12 px-4" style={{ background: 'linear-gradient(120deg, #e6f4f1 70%, #d1f2eb 100%)' }}>
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <FaGasPump className="text-3xl text-green-600" />
-            <div>
-              <h2 className="text-xl md:text-2xl font-bold text-gray-800">LPG Door Delivery</h2>
-              <span className="inline-block px-2 py-0.5 bg-green-100 text-green-700 rounded-full text-xs font-medium mt-1">
-                Same Day Delivery
-              </span>
+      {/* Service Buttons Section */}
+      <section className="py-14 px-6 bg-[#f2fdfa] text-center">
+        <h2 className="text-3xl font-bold text-[#035F6A] mb-8">Our Services</h2>
+        <div className="flex flex-col gap-5 items-center max-w-md mx-auto">
+          <Link
+            to="/lpg"
+            className="w-full bg-white border border-[#b2e5d2] text-[#035F6A] font-semibold py-3 px-6 rounded-full shadow-md hover:bg-[#e2f8f0] hover:text-green-700 transition duration-300"
+          >
+            <div className="flex items-center justify-center gap-2">
+              <FaGasPump />
+              LPG DOOR DELIVERY
             </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 items-center">
-            {/* Image without button */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg min-h-[220px] flex items-center justify-center bg-gray-100">
-              <img 
-                src="/src/assets/images/LPG2.jpg" 
-                alt="LPG Delivery Service" 
-                className="w-full h-full object-cover opacity-90"
-              />
+          </Link>
+          <Link
+            to="/solar"
+            className="w-full bg-white border border-[#b2e5d2] text-[#035F6A] font-semibold py-3 px-6 rounded-full shadow-md hover:bg-[#e2f8f0] hover:text-green-700 transition duration-300"
+          >
+            <div className="flex items-center justify-center gap-2">
+              <FaSolarPanel />
+              SOLAR SYSTEM INSTALLATION
             </div>
-            {/* Info Card */}
-            <div className="bg-gray-50 rounded-xl p-5 shadow-md">
-              <p className="text-gray-700 text-sm mb-4">
-                Already filled LPG cylinders delivered to your doorstep. Choose from our wide range of cylinder sizes to match your needs.
-              </p>
-              <div className="mb-4">
-                <h3 className="text-base font-semibold mb-2 text-gray-800">Available Cylinder Sizes</h3>
-                <div className="flex flex-wrap gap-2">
-                  {[
-  { size: '3kg', type: 'Fibre & Steel' },
-  { size: '6kg', type: 'Fibre & Steel' },
-  { size: '12kg', type: 'Fibre & Steel' },
-  { size: '50kg', type: 'Steel Only' },
-].map((cylinder) => (
-  <div key={cylinder.size} className="bg-white border border-green-100 px-3 py-2 rounded-lg flex flex-col items-center min-w-[70px]">
-    <span className="font-bold text-green-700 text-sm">{cylinder.size}</span>
-    <span className="text-[11px] text-gray-500">{cylinder.type}</span>
-  </div>
-))}
-
-                </div>
-              </div>
-              <ul className="space-y-2 text-xs text-gray-600 mb-3">
-                <li className="flex items-center gap-2">
-                  <FaTruck className="text-green-500" />
-                  Doorstep delivery—no travel or queues.
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaClock className="text-green-500" />
-                  Time-saving & hassle-free—no heavy lifting.
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaShieldAlt className="text-green-500" />
-                  Reliable, fast service by trained personnel.
-                </li>
-                <li className="flex items-center gap-2">
-                  <MdSupportAgent className="text-green-500" />
-                  Customer education for safe LPG use.
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaCheckCircle className="text-green-500" />
-                  Exclusive Newgas distributor in our zones.
-                </li>
-              </ul>
-              <Link
-                to="/order-lpg"
-                className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 hover:scale-105 transition-all duration-300 text-xs mt-2"
-              >
-                Order Now
-                <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
-              </Link>
-            </div>
-          </div>
+          </Link>
         </div>
       </section>
 
-      {/* LPG How It Works */}
-      <section className="py-10 px-4 bg-[#e6f4f1]">
-  <div className="max-w-4xl mx-auto">
-    <h2 className="text-2xl font-bold mb-6 text-[#035F6A] text-center">How LPG Delivery Works</h2>
-    <div className="grid md:grid-cols-4 gap-6">
-      {lpgSteps.map((item, idx) => (
-        <div key={idx} className="bg-white p-6 rounded-xl shadow-md text-center">
-          <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-lg">{item.step}</div>
-          <h3 className="font-semibold mb-2 text-gray-800">{item.title}</h3>
-          <p className="text-xs text-gray-600">{item.description}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-      {/* Solar Section */}
-      <section className="py-12 px-4" style={{ background: 'linear-gradient(120deg, #d1f2eb 60%, #e6f4f1 100%)' }}>
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <FaSolarPanel className="text-3xl text-blue-600" />
-            <div>
-              <h2 className="text-xl md:text-2xl font-bold text-gray-800">Solar Solutions</h2>
-              <span className="inline-block px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs font-medium mt-1">
-                Professional Installation
-              </span>
-            </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 items-center">
-            {/* Image without button */}
-            <div className="relative rounded-xl overflow-hidden shadow-lg min-h-[220px] flex items-center justify-center bg-gray-100">
-              <img 
-                src="/src/assets/images/SOLAR6.jpg" 
-                alt="Solar Installation Service" 
-                className="w-full h-full object-cover opacity-90"
-              />
-            </div>
-            {/* Info Card */}
-            <div className="bg-white rounded-xl p-5 shadow-md">
-              <p className="text-gray-700 text-sm mb-4">
-                Solar panel systems that work for both grid-connected and off-grid locations, reducing dependence on unstable electricity supply and protecting against blackouts.
-              </p>
-              <div className="mb-4">
-                <h3 className="text-base font-semibold mb-2 text-gray-800">Panel Specifications</h3>
-                <div className="flex flex-wrap gap-2">
-                  <div className="bg-blue-50 border border-blue-100 px-3 py-2 rounded-lg flex flex-col items-center min-w-[110px]">
-                    <span className="font-bold text-blue-700 text-sm">Residential</span>
-                    <span className="text-[11px] text-gray-500">1.6m x 1m, 250W–450W</span>
-                    <span className="text-[11px] text-gray-500">Homes & small offices</span>
-                  </div>
-                  <div className="bg-blue-50 border border-blue-100 px-3 py-2 rounded-lg flex flex-col items-center min-w-[110px]">
-                    <span className="font-bold text-blue-700 text-sm">Commercial</span>
-                    <span className="text-[11px] text-gray-500">2.0m x 1.0m, 450W–600W+</span>
-                    <span className="text-[11px] text-gray-500">Factories, institutions</span>
-                  </div>
-                </div>
-              </div>
-              <div className="mb-4">
-                <h3 className="text-base font-semibold mb-2 text-gray-800">Technical Features</h3>
-                <ul className="space-y-2 text-xs text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <FaCheckCircle className="text-blue-500" />
-                    High efficiency (18%+) for limited roof space
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaCheckCircle className="text-blue-500" />
-                    Low temperature coefficient (≤ -0.38%/°C) for heat resistance
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaCheckCircle className="text-blue-500" />
-                    Sturdy, corrosion-resistant frames for coastal and humid zones
-                  </li>
-                </ul>
-              </div>
-              <ul className="space-y-2 text-xs text-gray-600 mb-3">
-                <li className="flex items-center gap-2">
-                  <FaSolarPanel className="text-blue-500" />
-                  Premium, durable solar panels
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaTools className="text-blue-500" />
-                  Reliable, decentralized power
-                </li>
-                <li className="flex items-center gap-2">
-                  <MdSupportAgent className="text-blue-500" />
-                  Smart, tech-enabled monitoring
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaShieldAlt className="text-blue-500" />
-                  Skilled, responsive team
-                </li>
-              </ul>
-              <Link
-                to="/book-solar"
-                className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 hover:scale-105 transition-all duration-300 text-xs mt-2"
-              >
-                Book Consultation
-                <span className="group-hover:translate-x-2 transition-transform duration-300">→</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Solar How It Works */}
-      <section className="py-10 px-4 bg-[#d1f2eb]">
-  <div className="max-w-4xl mx-auto">
-    <h2 className="text-2xl font-bold mb-6 text-[#035F6A] text-center">How Solar Installation Works</h2>
-    <div className="grid md:grid-cols-4 gap-6">
-      {solarSteps.map((item, idx) => (
-        <div key={idx} className="bg-white p-6 rounded-xl shadow-md text-center">
-          <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-lg">{item.step}</div>
-          <h3 className="font-semibold mb-2 text-gray-800">{item.title}</h3>
-          <p className="text-xs text-gray-600">{item.description}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-      {/* Process Section */}
-     {/* <section className="py-16 px-6 bg-[#e6f4f1]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#035F6A] to-green-600 bg-clip-text text-transparent">
-              How It Works
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Simple, straightforward process to get you started
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8 relative">
-            {processSteps.map((item, index) => (
-              <div key={index} className="relative group">
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500">
-                  <span className="absolute -top-4 left-8 bg-[#035F6A] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
-                    {item.step}
-                  </span>
-                  <h3 className="text-xl font-bold mb-4 text-gray-800">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </div>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gray-300" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-      {/* CTA Section */}
-      <section className="py-16 px-6 bg-gradient-to-br from-[#035F6A] to-green-600 text-white">
+      {/* Final CTA */}
+      <section className="py-16 px-6 bg-gradient-to-br from-[#0ea371] to-[#035F6A] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Make the Switch?</h2>
           <p className="text-xl mb-12 opacity-90 max-w-2xl mx-auto">
@@ -324,7 +80,7 @@ const Services = () => {
           <div className="flex justify-center gap-6 flex-wrap">
             <Link
               to="/contact"
-              className="bg-white text-[#035F6A] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg"
+              className="bg-white text-[#035F6A] px-8 py-4 rounded-xl font-semibold hover:bg-[#e2f8f0] hover:text-green-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Contact Us Today
             </Link>
