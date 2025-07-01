@@ -25,7 +25,6 @@ const ContactPage = () => {
             <FaPhoneAlt className="text-3xl mx-auto mb-2 text-[#035F6A]" />
             <h4 className="font-bold mb-1">PHONE NUMBER</h4>
             <p>+233 559 718 196</p>
-            <p>+233 888 123 456 (Toll Free)</p>
           </div>
 
           <div className="bg-white text-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
